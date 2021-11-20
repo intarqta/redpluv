@@ -1,0 +1,6 @@
+#body {
+   /*IMPORTANTE*/
+  display: flex;
+  align-items: center;
+  position: relative;
+}
