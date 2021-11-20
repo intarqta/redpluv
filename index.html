@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>    
+    <!-- Añadir el archivo CSS -->
+    <link rel="stylesheet" href="style.css">  
+    <!-- Añadir el CDN de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-    
 </head>
 <body>
+    <!-- Añadir la hoja de Excel Online a la Página Web -->
     <iframe id="hoja" width="900" height="800" src="https://docs.google.com/spreadsheets/d/18PL7isuz2yaOY4Bplz_agPaH3prKeNkRbja8FgLCzE0/edit?usp=sharing"></iframe>
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <!-- Agregar el div del mapa -->
     <div id="map"></div>
+    <!-- Añadir CDN de JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
+    <!-- Añade el jeoJson  -->
     <script type="text/javascript" src="Red_Pluviometrica.js"></script>
+    <!-- Añade el archivo JS -->
     <script src="map.js"></script>
 </body>
 </html>
