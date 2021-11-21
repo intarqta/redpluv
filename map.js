@@ -4,7 +4,9 @@ var map = L.map('map').setView([-29.25,-60.43], 8);
 // Agregar Google Hibrido como mapa base
 var osmLayer =  L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
     maxZoom: 18,
-    subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    subdomains:['mt0','mt1','mt2','mt3']
+}).addTo(map);
 
 // Crear una red de iconos con logos de lluvias
 var redMarker = L.icon({
@@ -12,19 +14,18 @@ var redMarker = L.icon({
     iconUrl:'cloud-showers-heavy-solid.svg',
     iconSize:[40,47]
 })
-// L.marker([-29.3,-60.4], {icon:redMarker}).addTo(map)
 // Función para generar un cartel al hacer click en el pluviometro
 function popUpInfo (feature, layer) {
     if (feature.properties && feature.properties.Name) {
         layer.bindTooltip(feature.properties.Name, {
             interactive: true,
             permanent: false,
-            opacity: 1,
+            fillopacity: 0.01,
             direction: 'top',
             className: 'popup',
         });
         layer.bindPopup("<b>"+feature.properties.Name+"</b>");
-        layer.setIcon(redMarker)
+        layer.setIcon(redMarker, {opacity:0.01})
     }
 }
 
