@@ -19,3 +19,11 @@
 #hoja {
   float: left;
 }
+#popup {
+  color: red; 
+  font-weight: bold;
+  background-color: #000;
+  border:0px;
+  box-shadow: false;
+  font-size:20px;
+}
