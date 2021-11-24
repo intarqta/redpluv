@@ -15,6 +15,15 @@
 #hoja {
   position: relative;
   margin-bottom: 50px;
+  height: 705px; 
+  width: 580px;
+  padding: 0px;
+  margin-right: 0%;
+  /* position: relative;
+  left: 75%; */
+}
+#hoja {
+position: relative;
 } 
 
 #popup {
