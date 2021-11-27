@@ -11,19 +11,20 @@ var osmLayer =  L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}
 // Crear una red de iconos con logos de lluvias
 var redMarker = L.icon({
     color :'red',
-    iconUrl:'cloud-showers-heavy-solid.svg',
+    iconUrl:'logo_red.png',
     iconSize:[40,47]
 })
 // Función para generar un cartel al hacer click en el pluviometro
 function popUpInfo (feature, layer) {
     if (feature.properties && feature.properties.Name) {
-        layer.bindTooltip(feature.properties.Name, {
-            interactive: true,
-            permanent: false,
-            fillopacity: 0.01,
-            direction: 'top',
-            className: 'popup',
-        });
+        layer.bindTooltip()
+        // layer.bindTooltip(feature.properties.Name, {
+        //     interactive: true,
+        //     permanent: false,
+        //     fillopacity: 0.01,
+        //     direction: 'top',
+        //     className: 'popup',
+        // }),
         layer.bindPopup("<b>"+feature.properties.Name+"</b>");
         layer.setIcon(redMarker, {opacity:0.01})
     }
