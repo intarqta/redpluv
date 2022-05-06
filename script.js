@@ -206,7 +206,7 @@ let config = {
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
         <table class="tablaDatos">
           <tbody class= "tableEncab">
-            </tbody>
+            </tbody class="TablaCuerpo">
             <tbody class= "tableEncab">
             <tr class ="tableAg">
                 <th class ="tableTh"> Agencia </th>
@@ -214,7 +214,7 @@ let config = {
                 <td> ${max3[1][0]} </td>
                 <td> ${max3[2][0]} </td>
             </tr>
-            <tr class ="tableTr">
+            <tr class ="tableTrLug">
                 <th class ="tableTh"> Lugar </th>
                 <td> ${max3[0][1]} </td>
                 <td> ${max3[1][1]} </td>

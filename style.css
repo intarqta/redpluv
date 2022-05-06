@@ -367,9 +367,9 @@ svg:not(:root) {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
 }
-/* ------------------------- */
-/* POPUP */
-/* ------------------------- */
+/*==========================================================*/
+/*Ajustes del popup que oculta el mapa de fondo 
+/*==========================================================*/
 
 .contenedor-mapa .overlay {
   z-index: 999999;
@@ -399,7 +399,7 @@ svg:not(:root) {
     overflow: auto;
     margin-bottom: -5%; */
   height:75%;
-  width: 50%;
+  width: 65%;
 	
 	/* transition: .3s ease all;
 	transform: scale(0.7);
@@ -414,7 +414,7 @@ svg:not(:root) {
 }
 @media (max-width: 400px) {
   .contenedor-mapa .overlay .popup-popup{
-    height:75%;
+    height:85%;
     width: 90%;
   }
 }
@@ -455,25 +455,35 @@ svg:not(:root) {
   text-align: justify;
   display: block;
 }
-.divContdataTable {
-  display: block;
-}
+/*==========================================================*/
+/*Ajustes de la tabla de resumen de los primeros 3 datos*/
+/*==========================================================*/
 .tablaDatos {
   margin-top: 5em;
-  max-width: 100vh;
   margin-left: 10px;
+  width: auto;
 }
 .tableEncab {
   display: flex;
-  justify-content: space-around;
-  /* border: 1px solid black; */
+  justify-content: space-around;  
 }
 .tableTr {
   border: 1px solid black;
   padding-left: 5px;
   padding-right: 1em;
   display: grid;
+  text-align: center;  
+}
+.tableTrLug {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 1em;
+  display: grid;
   text-align: center;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  word-break: break-all;
 }
 .tableTh {
   border-bottom: 1px solid black;
@@ -495,15 +505,23 @@ svg:not(:root) {
 }
 @media (max-width: 768px) {
   .tableTr {
+    font-size: 11px;
     border: 1px solid black;
     padding-left: 5px;
     padding-right: 1em;
     display: grid;
     text-align: center;
+    white-space:nowrap
   }
   .tableTh {
     border-bottom: 1px solid black;
     text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .tableTrLug {
+    font-size: 10px;
   }
   .tableTrpre {
     border: 1px solid black;
@@ -511,35 +529,49 @@ svg:not(:root) {
     padding-right: 5px;
     display: grid;
     text-align: center;
+    font-size: 11px;
+  }
+  .tableAg {
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: grid;
+    text-align: center;
+    font-size: 11px;
   }
 
 }
 @media (max-width: 400px) {
   .tablaDatos {
-    margin-top: 5em;
-    width: 25vh;
-    margin-left: 3px;
-    margin-left: -12vh;
-  }  
+    margin-left: -8vh;
+    margin-right: 1vh;
+  }
   .tableTr {
-    font-size: 9px;
+    font-size: 11px;
     border: 1px solid black;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 5px;
+    padding-right: 1em;
     display: grid;
     text-align: center;
+    white-space:nowrap
   }
   .tableTh {
     border-bottom: 1px solid black;
     text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .tableTrLug {
+    font-size: 10px;
   }
   .tableTrpre {
-    font-size: 9px;
     border: 1px solid black;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     display: grid;
     text-align: center;
+    font-size: 11px;
   }
   .tableAg {
     visibility: hidden;
