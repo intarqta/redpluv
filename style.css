@@ -76,12 +76,21 @@ svg:not(:root) {
     max-width: 180px;
     width: 100%;
     transform: translateX(0);
+    height: 70%;
+    margin-top: 15%;
     transition: transform 0.3s ease-in-out;
   }
 
   .active-sidebar .leaflet-left {
-    transform: translate(185px, 0px);
+    transform: translate(0px, 0px);
     transition: transform 350ms;
+  }
+}
+@media (max-width: 400px) {
+  .active-sidebar .sidebar {
+    height: 70%;
+    margin-top: 35%;
+    transition: transform 0.3s ease-in-out;
   }
 }
 
@@ -396,7 +405,19 @@ svg:not(:root) {
 	transform: scale(0.7);
 	opacity: 0; */
 }
+@media (max-width: 768px) {
+  .contenedor-mapa .overlay .popup-popup{
+    height:75%;
+    width: 75%;
+  }
 
+}
+@media (max-width: 400px) {
+  .contenedor-mapa .overlay .popup-popup{
+    height:75%;
+    width: 90%;
+  }
+}
 .contenedor-mapa .overlay .popup-popup .btn-cerrar-popup {
     font-size: 16px; /* Cambiar el tamaño de la tipografia */
 	text-transform: uppercase; /* Texto en mayusculas */
@@ -439,12 +460,88 @@ svg:not(:root) {
 }
 .tablaDatos {
   margin-top: 5em;
-  display: block;
- 
+  max-width: 100vh;
+  margin-left: 10px;
 }
-.tabDat {
-  width: 16px;
+.tableEncab {
   display: flex;
-  margin-left: 1em;
+  justify-content: space-around;
+  /* border: 1px solid black; */
 }
+.tableTr {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 1em;
+  display: grid;
+  text-align: center;
+}
+.tableTh {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.tableTrpre {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: grid;
+  text-align: center;
+}
+.tableAg {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: grid;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .tableTr {
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 1em;
+    display: grid;
+    text-align: center;
+  }
+  .tableTh {
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+  .tableTrpre {
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: grid;
+    text-align: center;
+  }
 
+}
+@media (max-width: 400px) {
+  .tablaDatos {
+    margin-top: 5em;
+    width: 25vh;
+    margin-left: 3px;
+    margin-left: -12vh;
+  }  
+  .tableTr {
+    font-size: 9px;
+    border: 1px solid black;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: grid;
+    text-align: center;
+  }
+  .tableTh {
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+  .tableTrpre {
+    font-size: 9px;
+    border: 1px solid black;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: grid;
+    text-align: center;
+  }
+  .tableAg {
+    visibility: hidden;
+  }
+}

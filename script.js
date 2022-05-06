@@ -195,8 +195,7 @@ let config = {
         <button type="button" id="botonPopupMasDatos" class="btn btn-success btn-sm btn-block dataModal botonPopupMasDatos" data-toggle="modal" data-target="#dataModal" >Mas Datos</button>     
         </article>
     `;
-    
-      
+          
     
     // create sidebar content
     const addconttemplate = `
@@ -206,18 +205,34 @@ let config = {
         <div class="marker-id3">Departamento: ${marker.properties.Dep_nam}</div>
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
         <table class="tablaDatos">
-              <tr class="tabDat">
-                <td class="tabDat"> Agencia </td>
-                <td class="tabDat"> Lugar </td>
-                <td class="tabDat"> Fecha </td>
-                <td class="tabDat"> Precipitación </td>
-              </tr class="tabDat">
-              <trclass="tabDat>
-                <td> ${max3[0]} </td>
-                <td> ${max3[1]} </td>
-                <td> ${max3[2]} </td>
-                <td> ${max3[3]} </td>
-              </tr> 
+          <tbody class= "tableEncab">
+            </tbody>
+            <tbody class= "tableEncab">
+            <tr class ="tableAg">
+                <th class ="tableTh"> Agencia </th>
+                <td> ${max3[0][0]} </td>
+                <td> ${max3[1][0]} </td>
+                <td> ${max3[2][0]} </td>
+            </tr>
+            <tr class ="tableTr">
+                <th class ="tableTh"> Lugar </th>
+                <td> ${max3[0][1]} </td>
+                <td> ${max3[1][1]} </td>
+                <td> ${max3[2][1]} </td>
+            </tr>
+            <tr class ="tableTr">
+                <th class ="tableTh"> Fecha </th>
+                <td> ${max3[0][2]} </td>
+                <td> ${max3[1][2]} </td>
+                <td> ${max3[2][2]} </td>
+            </tr>
+            <tr class ="tableTrpre">
+                <th class ="tableTh"> Precipitación </th>
+                <td> ${max3[0][3]} </td>
+                <td> ${max3[1][3]} </td>
+                <td> ${max3[2][3]} </td>
+            </tr>
+            </tbody>
         </table> 
       </article>
     `;
