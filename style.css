@@ -63,8 +63,8 @@ svg:not(:root) {
   width: 100%;
   transform: translateX(0);
 }
-
-@media (max-width: 850px) {
+ 
+@media (max-width: 750px) {
   .sidebar {
     top: 10px;
     left: 10px;
@@ -76,7 +76,7 @@ svg:not(:root) {
     max-width: 250px;
     width: 100%;
     transform: translateX(0);
-    max-height: 600px;
+    max-height: 450px;
     margin-top: 15%;
     transition: transform 0.3s ease-in-out;
   }
@@ -86,7 +86,8 @@ svg:not(:root) {
     transition: transform 350ms;
   }
 }
-@media (min-width: 1200px) {
+
+@media only screen and (min-width: 750px) and (max-width: 1200px){
   .sidebar {
     top: 10px;
     left: 10px;
@@ -108,14 +109,28 @@ svg:not(:root) {
     transition: transform 350ms;
   }
 }
-@media (max-width: 600px) {
-  .active-sidebar .sidebar {
-    height: 400px;
-    margin-top: 35%;
+@media only screen and (min-width: 1200px) and (max-width: 3000px){
+  .sidebar {
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    max-height: 600px;
     transition: transform 0.3s ease-in-out;
   }
-}
+  .active-sidebar .sidebar {
+    max-width: 280px;
+    width: 100%;
+    transform: translateX(0);
+    max-height: 600px;
+    margin-top: 5%;
+    transition: transform 0.3s ease-in-out;
+  }
 
+  .active-sidebar .leaflet-left {
+    transform: translate(0px, 0px);
+    transition: transform 350ms;
+  }
+}
 
 .close-button {
   cursor: pointer;
@@ -436,6 +451,8 @@ svg:not(:root) {
   }
 
 }
+
+
 @media (max-width: 600px) {
   .contenedor-mapa .overlay .popup-popup{
     height:65%;
@@ -502,25 +519,12 @@ svg:not(:root) {
   display: grid;
   text-align: center;  
 }
-.tableTrLug {
-  border: 1px solid black;
-  padding-left: 5px;
-  padding-right: 1em;
-  display: grid;
-  text-align: center;
-  height: auto;
-  width: auto;
-  overflow: hidden;
-  word-break: break-all;
-}
+
 .tableTh {
   border-bottom: 1px solid black;
   text-align: center;
 }
-.tableThLug {
-  border-bottom: 1px solid black;
-  text-align: center;
-}
+
 .tableTrpre {
   border: 1px solid black;
   padding-left: 5px;
@@ -528,54 +532,38 @@ svg:not(:root) {
   display: grid;
   text-align: center;
 }
-.tableAg {
-  border: 1px solid black;
-  padding-left: 5px;
-  padding-right: 5px;
-  display: grid;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .tableTr {
-    font-size: 11px;
-    border: 1px solid black;
-    padding-left: 5px;
-    padding-right: 1em;
-    display: grid;
-    text-align: center;
-    white-space:nowrap
-  }
-  .tableTh {
-    border-bottom: 1px solid black;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 11px;
-    margin-bottom: 10px;
-  }
-  .tableTrLug {
-    font-size: 10px;
-  }
-  .tableTrpre {
-    border: 1px solid black;
-    padding-left: 5px;
-    padding-right: 5px;
-    display: grid;
-    text-align: center;
-    font-size: 11px;
-  }
-  .tableAg {
-    border: 1px solid black;
-    padding-left: 3px;
-    padding-right: 3px;
-    display: grid;
-    text-align: center;
-    font-size: 11px;
-  }
 
+@media (min-width: 768px) {
+  @media (max-width: 1200px) {
+    .tableTr {
+      font-size: 11px;
+      border: 1px solid black;
+      padding-left: 10px;
+      padding-right: 2em;
+      display: grid;
+      text-align: center;
+      white-space:nowrap
+    }
+    .tableTh {
+      border-bottom: 1px solid black;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .tableTrpre {
+      border: 1px solid black;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: grid;
+      text-align: center;
+      font-size: 13px;
+    }
+  }
+  
 }
 @media (max-width: 450px) {
   .tablaDatos {
-    margin-left: -8vh;
     margin-right: 1vh;
   }
   .tableTr {
@@ -628,7 +616,7 @@ svg:not(:root) {
 }
 .chart-Bar.active{
   margin: auto;
-  margin-top: -60vh;
+  margin-top: -35vh;
   visibility: visible;
   position: absolute;
   justify-content: center;
@@ -658,14 +646,13 @@ svg:not(:root) {
 @media (max-width: 600px) {
   .chart-Bar.active{
     font-size: 9px;
-    margin-top: -35em;
+    margin-top: -25em;
     margin-left: -5em;
     width: 300vh;
     margin-right: -5em;
     padding: 0px;
     visibility: visible;
     position: relative;
-    transform: rotate(90deg);
     transition: transform 0.8s ease-in-out;
   }
 }
@@ -695,4 +682,30 @@ svg:not(:root) {
     transition: transform 0.8s ease-in-out;
   }
   
+}
+/*Configuración del popup  para moviles*/
+@media (min-width: 600px) {
+  @media (max-height: 1000px) {
+    .contenedor-mapa .overlay .popup-popup{
+      height:100%;
+      width: 70%;
+    }
+    #botonpluv {
+      visibility: hidden;
+    }
+    #botonpluv1 {
+      visibility: hidden;
+    }
+    .chart-Bar.active{
+      margin: auto;
+      margin-top: -75vh;
+      font-size: 11px;
+      visibility: visible;
+      position: absolute;
+      justify-content: center;
+      vertical-align: middle;
+      transition: transform 0.8s ease-in-out;
+    }
+    
+  }
 }

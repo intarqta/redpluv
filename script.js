@@ -172,7 +172,7 @@ let config = {
       Array.prototype.last = function(n){
         return this.slice(-n)
       };
-      var max3 = datos2.last(3);
+      var max3 = datos2.last(5);
       max3.forEach(data =>{
         console.log(data)       
 
@@ -203,29 +203,21 @@ let config = {
           <tbody class= "tableEncab">
             </tbody class="TablaCuerpo">
             <tbody class= "tableEncab">
-            <tr class ="tableAg">
-                <th class ="tableTh"> Agencia </th>
-                <td> ${max3[0][0]} </td>
-                <td> ${max3[1][0]} </td>
-                <td> ${max3[2][0]} </td>
-            </tr>
-            <tr class ="tableTrLug">
-                <th class ="tableThLug"> Lugar </th>
-                <td> ${max3[0][1]} </td>
-                <td> ${max3[1][1]} </td>
-                <td> ${max3[2][1]} </td>
-            </tr>
             <tr class ="tableTr">
                 <th class ="tableTh"> Fecha </th>
                 <td> ${max3[0][2]} </td>
                 <td> ${max3[1][2]} </td>
                 <td> ${max3[2][2]} </td>
+                <td> ${max3[3][2]} </td>
+                <td> ${max3[4][2]} </td>
             </tr>
             <tr class ="tableTrpre">
                 <th class ="tableTh"> Precipitación </th>
                 <td> ${max3[0][3]} </td>
                 <td> ${max3[1][3]} </td>
                 <td> ${max3[2][3]} </td>
+                <td> ${max3[3][3]} </td>
+                <td> ${max3[4][3]} </td>
             </tr>
             </tbody>
         </table> 
