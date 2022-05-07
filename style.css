@@ -37,7 +37,7 @@ svg:not(:root) {
 }
 
 .active-sidebar .leaflet-left {
-  transform: translateX(260px);
+  transform: translateX(280px);
 }
 
 .sidebar {
@@ -55,7 +55,7 @@ svg:not(:root) {
 }
 
 .active-sidebar .sidebar {
-  max-width: 260px;
+  max-width: 280px;
   top: 10px;
   left: 10px;
   border-radius: 5px;
@@ -73,7 +73,7 @@ svg:not(:root) {
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 180px;
+    max-width: 190px;
     width: 100%;
     transform: translateX(0);
     height: 70%;
@@ -88,7 +88,7 @@ svg:not(:root) {
 }
 @media (max-width: 400px) {
   .active-sidebar .sidebar {
-    height: 70%;
+    height: 60%;
     margin-top: 35%;
     transition: transform 0.3s ease-in-out;
   }
@@ -394,6 +394,7 @@ svg:not(:root) {
 	border-radius: 3px;
 	padding: 10px;
 	text-align: center;
+  border-radius: 25px;
 	/* width: 65%;
     max-height: 70%;
     overflow: auto;
@@ -450,10 +451,14 @@ svg:not(:root) {
   justify-content: space-around;
 }
 .divContdata {
-  background-color: #4a7192;
+  background-color: #3f896f6f;
   height: 80%;
   text-align: justify;
   display: block;
+  border-radius: 25px;
+}
+.divContdata.active {
+  visibility: hidden;
 }
 /*==========================================================*/
 /*Ajustes de la tabla de resumen de los primeros 3 datos*/
@@ -486,6 +491,10 @@ svg:not(:root) {
   word-break: break-all;
 }
 .tableTh {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.tableThLug {
   border-bottom: 1px solid black;
   text-align: center;
 }
@@ -541,7 +550,7 @@ svg:not(:root) {
   }
 
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .tablaDatos {
     margin-left: -8vh;
     margin-right: 1vh;
@@ -562,6 +571,13 @@ svg:not(:root) {
     font-size: 11px;
     margin-bottom: 10px;
   }
+  .tableThLug {
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    padding-bottom: 10px;
+  }
   .tableTrLug {
     font-size: 10px;
   }
@@ -577,3 +593,42 @@ svg:not(:root) {
     visibility: hidden;
   }
 }
+/*Configuraciónes gráficas de los charts*/
+.chart-Bar {
+  position: absolute;
+  z-index: 999999999;
+  background-color: #1d212502;
+  visibility: hidden;
+  height: 0;
+}
+.chart-Bar.active{
+  margin-top: -20em;
+  /* margin-bottom: 30em; */
+  visibility: visible;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+}
+@media (max-width: 760px) {
+  .chart-Bar.active{
+    margin-top: -20em;
+    /* margin-bottom: 30em; */
+    visibility: visible;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
+}
+@media (max-width: 400px) {
+  .chart-Bar.active{
+    margin-top: -18em;
+    margin-bottom: 30em;
+    margin-left: -5em;
+    width: 300vh;
+    margin-right: -5em;
+    padding: 0px;
+    visibility: visible;
+    position: relative;
+    transform: rotate(90deg);
+    transition: transform 0.8s ease-in-out;
+  }
+}
+

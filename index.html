@@ -18,6 +18,8 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <!-- librería que permite cambiar los estados de los botones -->
     <script src="https://code.jquery.com/jquery-git.js"></script>
+    <!-- Instalar el CDN de chart.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> -->
     
     <!-- Añadir libreria query -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -63,10 +65,15 @@
               <button id="botonpluv" class="btn btn-success">Datos</button>
             </li>
          </ul>
-         <div class="divContdata" id="divContdata"></div>
+         <div class="divContdata" id="divContdata">
+          
+         </div>
+         <canvas id="chart-Bar" class="chart-Bar"></canvas>
            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="x">X</i></a>
         </div>
       </div> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     <script src="cloud-showers-heavy-solid.svg"></script>
     <script src="script.js"></script>
   </body>

@@ -132,19 +132,9 @@ let config = {
     map.setView([-29.25 ,-60.45], 8);
   });
   
-  // close sidebar when click outside
-  // document.addEventListener("click", (e) => {
-  //   const target = e.target;
-  //   if (
-  //     !target.closest(".sidebar") &&
-  //     !target.classList.contains("leaflet-marker-icon")
-  //   ) {
-  //     closeSidebar();
-  //   }
-  // });
   
   // --------------------------------------------------
-  // close sidebar
+  // cerrar la ventana emergente izquierda
   
   function closeSidebar() {
     // remove class active-sidebar
@@ -157,8 +147,8 @@ let config = {
   
   // --------------------------------------------------
   // add content to sidebar
-  const ContdataTable = document.getElementById("divContdataTable");  
-
+  const ContdataTable = document.getElementById("divContdataTable"); 
+  var myChart;
   function addContentToSidebar(marker) {
     const { id, Lugar, coords } = marker;
     const smallInfo = Lugar !== undefined ? `<small>${Lugar}</small>` : "";
@@ -215,7 +205,7 @@ let config = {
                 <td> ${max3[2][0]} </td>
             </tr>
             <tr class ="tableTrLug">
-                <th class ="tableTh"> Lugar </th>
+                <th class ="tableThLug"> Lugar </th>
                 <td> ${max3[0][1]} </td>
                 <td> ${max3[1][1]} </td>
                 <td> ${max3[2][1]} </td>
@@ -237,9 +227,6 @@ let config = {
       </article>
     `;
 
-    // <img class="img-zoom" src="" alt="${marker.properties.Dep_nam}">
-    // ${smallInfo}
-    // <div class="info-description">${marker.properties.Lugar}</div>
     const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content");
 
@@ -260,11 +247,18 @@ let config = {
        e.preventDefault();
        overlay.classList.remove('active');
        popup.classList.remove('active');
+      canvas.classList.remove('active');
+      /*Función que permite destruir el evento gráfico al cambiar de pestaña o cerrar el pupup */
+      if(myChart){
+        myChart.destroy();
+      }
      });
-    /*Carga de datos dentro del popup de mas datos*/
+    /*Carga de datos dentro del popup Pluviometro de mas datos*/
     const botonpluv = document.getElementById('botonpluv1');
     botonpluv.addEventListener('click', function(){
       const addContpopup = document.getElementById("divContdata");
+      addContpopup.classList.remove('active');
+      canvas.classList.remove('active');
       // always remove content before adding new one
       sidebarContent?.remove();
       document.getElementById("divContdata").innerHTML="";
@@ -273,7 +267,7 @@ let config = {
       // set bounds depending on marker coords
       boundsMap(coords);
     })
-
+    
     // always remove content before adding new one
     sidebarContent?.remove();
     document.getElementById("contenido").innerHTML="";
@@ -284,16 +278,42 @@ let config = {
     // set bounds depending on marker coords
     boundsMap(coords);
   })
+  /*Carga de gráficas y link de descarga dentro del popup Datos*/     
+    const canvas = document.getElementById('chart-Bar');
+    const ctx = canvas.getContext('2d');
+    
+
+    const configChart = {
+      type: 'bar',
+      data: {
+         labels: datos2.map(data =>{return data[2]}),
+         datasets: [{
+            label: 'Lluvias '+max[1],
+            data: datos2.map(data =>{return data[3]}),
+            backgroundColor: 'rgba(0, 119, 204, 0.5)'
+         }]
+      } 
+    };
+  const botondatos = document.getElementById('botonpluv')
+   botondatos.addEventListener('click', function(){
+
+    document.getElementById("divContdata").innerHTML="";
+
+    const addContpopup = document.getElementById("divContdata");
+    addContpopup.classList.add('active');
+    document.getElementById("divContdata").innerHTML="";
+    /*Función que permite destruir el evento gráfico al cambiar de pestaña o cerrar el pupup */
+    if(myChart){
+      myChart.destroy();
+    }
+      // añadir el gráfico y asignarle la clase active 
+      myChart =  new Chart(ctx, configChart);
+      canvas.classList.add('active');
+   })
   }
-  
 }
 
-const botondatos = document.getElementById('botonpluv');
-   botondatos.addEventListener('click', function(){
-     console.log('Hice click en datos')
-   })
-
-
+   
   // --------------------------------------------------
   // bounds map when sidebar is open
   function boundsMap(coords) {
