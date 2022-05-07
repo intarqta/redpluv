@@ -121,7 +121,7 @@ svg:not(:root) {
     max-width: 350px;
     width: 100%;
     transform: translateX(0);
-    max-height: 600px;
+    max-height: 520px;
     margin-top: 5%;
     transition: transform 0.3s ease-in-out;
   }
@@ -451,26 +451,26 @@ svg:not(:root) {
 }
 @media (min-width: 1200px) {
   .marker-id {
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 0em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id2 {
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     top: 1em;
     left: 10px;
     color: rgb(8, 8, 8);
   }
-  .marker-id2 {
-    font-size: 22px;
+  .marker-id3 {
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     top: 2em;
-    left: 10px;
-    color: rgb(8, 8, 8);
-  }
-  .marker-id3 {
-    font-size: 22px;
-    font-weight: bold;
-    position: relative;
-    top: 3em;
     left: 10px;
     color: rgb(8, 8, 8);
   }
@@ -478,39 +478,39 @@ svg:not(:root) {
     font-size: 22px;
     font-weight: bold;
     position: relative;
-    top: 4em;
+    top: 3em;
     left: 10px;
     color: rgb(8, 8, 8);
   }
   .marker-id5 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
-    top: 7em;
+    top: 5em;
     left: 10px;
     color: rgb(8, 8, 8);
   }
   .marker-id6 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
-    top: 8em;
+    top: 6em;
     left: 10px;
     color: rgb(23, 33, 86);
   }
   .marker-id7 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
-    top: 9em;
+    top: 7em;
     left: 10px;
     color: rgb(18, 20, 100);
   }
   .botonPopupMasDatos {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
-    top: 16em;
+    top: 11em;
     margin-left: 10px;
     max-width: 50%;
     color: rgb(18, 20, 100);
@@ -518,10 +518,10 @@ svg:not(:root) {
   .sidebar-content .titulo {
     position: sticky;
     top: 0;
-    font-size: 25px;
+    font-size: 22px;
     color: rgb(20, 44, 143);
     background: #147a19e7;
-    padding: 10px 176px 10px 15px;
+    padding: 10px 280px 10px 15px;
   }
   .close-button {
     top: 5px;
