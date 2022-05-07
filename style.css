@@ -76,7 +76,7 @@ svg:not(:root) {
     max-width: 250px;
     width: 100%;
     transform: translateX(0);
-    max-height: 450px;
+    max-height: 600px;
     margin-top: 15%;
     transition: transform 0.3s ease-in-out;
   }
@@ -114,11 +114,11 @@ svg:not(:root) {
     top: 10px;
     left: 10px;
     border-radius: 5px;
-    max-height: 600px;
+    max-height: 700px;
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 280px;
+    max-width: 350px;
     width: 100%;
     transform: translateX(0);
     max-height: 600px;
@@ -270,9 +270,9 @@ svg:not(:root) {
   color: rgb(18, 20, 100);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 800px) {
   .marker-id {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 1em;
@@ -280,7 +280,7 @@ svg:not(:root) {
     color: rgb(8, 8, 8);
   }
   .marker-id2 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 2em;
@@ -288,7 +288,7 @@ svg:not(:root) {
     color: rgb(8, 8, 8);
   }
   .marker-id3 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 3em;
@@ -296,7 +296,7 @@ svg:not(:root) {
     color: rgb(8, 8, 8);
   }
   .marker-id4 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 4em;
@@ -304,7 +304,7 @@ svg:not(:root) {
     color: rgb(8, 8, 8);
   }
   .marker-id5 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 7em;
@@ -312,7 +312,7 @@ svg:not(:root) {
     color: rgb(8, 8, 8);
   }
   .marker-id6 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 8em;
@@ -320,7 +320,7 @@ svg:not(:root) {
     color: rgb(23, 33, 86);
   }
   .marker-id7 {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 9em;
@@ -328,7 +328,7 @@ svg:not(:root) {
     color: rgb(18, 20, 100);
   }
   .botonPopupMasDatos {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     position: relative;
     top: 8em;
@@ -339,7 +339,7 @@ svg:not(:root) {
   .sidebar-content .titulo {
     position: sticky;
     top: 0;
-    font-size: 14px;
+    font-size: 15px;
     color: rgb(20, 44, 143);
     background: #147a19e7;
     padding: 10px 176px 10px 15px;
@@ -357,6 +357,185 @@ svg:not(:root) {
     padding: 0px;
   }
 
+}
+@media (min-width: 800px) {
+  @media (max-width: 1400px) {
+    .marker-id {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 1em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id2 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 2em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id3 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 3em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id4 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 4em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id5 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 7em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id6 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 8em;
+      left: 10px;
+      color: rgb(23, 33, 86);
+    }
+    .marker-id7 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 9em;
+      left: 10px;
+      color: rgb(18, 20, 100);
+    }
+    .botonPopupMasDatos {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 14em;
+      margin-left: 10px;
+      max-width: 50%;
+      color: rgb(18, 20, 100);
+    }
+    .sidebar-content .titulo {
+      position: sticky;
+      top: 0;
+      font-size: 22px;
+      color: rgb(20, 44, 143);
+      background: #147a19e7;
+      padding: 10px 176px 10px 15px;
+    }
+    .close-button {
+      top: 5px;
+      padding: 2px;
+      width: 25px;
+      height: 25px;
+    }
+    .sidebar .close-button svg {
+      fill: #fff;
+      width: 20px;
+      height: 20px;
+      padding: 0px;
+    }
+    
+  }
+  
+}
+@media (min-width: 1200px) {
+  .marker-id {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 1em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id2 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 2em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id3 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 3em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id4 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 4em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id5 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 7em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id6 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 8em;
+    left: 10px;
+    color: rgb(23, 33, 86);
+  }
+  .marker-id7 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 9em;
+    left: 10px;
+    color: rgb(18, 20, 100);
+  }
+  .botonPopupMasDatos {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 16em;
+    margin-left: 10px;
+    max-width: 50%;
+    color: rgb(18, 20, 100);
+  }
+  .sidebar-content .titulo {
+    position: sticky;
+    top: 0;
+    font-size: 25px;
+    color: rgb(20, 44, 143);
+    background: #147a19e7;
+    padding: 10px 176px 10px 15px;
+  }
+  .close-button {
+    top: 5px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+  }
+  .sidebar .close-button svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+  }
+  
 }
 .info-content::-webkit-scrollbar {
   width: 10px;
@@ -645,7 +824,7 @@ svg:not(:root) {
 }
 @media (max-width: 600px) {
   .chart-Bar.active{
-    font-size: 9px;
+    font-size: 11px;
     margin-top: -25em;
     margin-left: -5em;
     width: 300vh;
@@ -674,7 +853,9 @@ svg:not(:root) {
 @media (min-height: 800px) {
   .chart-Bar.active{
     margin: auto;
-    margin-top: -60vh;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: -45vh;
     visibility: visible;
     position: absolute;
     justify-content: center;

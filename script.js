@@ -56,7 +56,7 @@ let config = {
           L.marker(marker.properties.coords, {
               icon: L.icon({
               iconUrl:'cloud-showers-heavy-solid.svg',
-              iconSize:[40,47],
+              iconSize:[80,100],
               // html: `${marker.properties.id}`,            
             }),
             "marker-options-id": marker.properties.id,
