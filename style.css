@@ -595,18 +595,31 @@ svg:not(:root) {
 }
 /*Configuraciónes gráficas de los charts*/
 .chart-Bar {
-  position: absolute;
-  z-index: 999999999;
-  background-color: #1d212502;
+  margin: auto;
+  margin-top: -60vh;
   visibility: hidden;
-  height: 0;
+  position: absolute;
+  justify-content: center;
+  vertical-align: middle;
+  transition: transform 0.8s ease-in-out;
 }
 .chart-Bar.active{
-  margin-top: -20em;
-  /* margin-bottom: 30em; */
+  margin: auto;
+  margin-top: -60vh;
   visibility: visible;
-  position: relative;
+  position: absolute;
+  justify-content: center;
+  vertical-align: middle;
   transition: transform 0.8s ease-in-out;
+}
+@media (max-width: 1200px) {
+  .chart-Bar.active{
+    margin-top: -50vh;
+    /* margin-bottom: 30em; */
+    visibility: visible;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
 }
 @media (max-width: 760px) {
   .chart-Bar.active{

@@ -72,7 +72,12 @@ let config = {
         color: "#ff3939",
         weight: 2,
       }).addTo(map);
-  
+      /*añadir los departamentos al mapa*/
+      L.geoJson(Departamentos,{
+        fillOpacity:0,
+        color:'indigo',
+        weight: 2,
+      }).addTo(map);  
       return data;
     })
     .then((data) => {
