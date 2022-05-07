@@ -46,7 +46,7 @@ svg:not(:root) {
   width: 100%;
   max-width: 400px;
   z-index: 99999;
-  background: rgba(255, 255, 255, 0.769);
+  background: rgb(255, 255, 255);
   overflow: hidden;
   height: auto;
   bottom: 1em;
@@ -64,19 +64,19 @@ svg:not(:root) {
   transform: translateX(0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .sidebar {
     top: 10px;
     left: 10px;
     border-radius: 5px;
-    height: auto;
+    max-height: 600px;
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 190px;
+    max-width: 250px;
     width: 100%;
     transform: translateX(0);
-    height: 70%;
+    max-height: 600px;
     margin-top: 15%;
     transition: transform 0.3s ease-in-out;
   }
@@ -86,13 +86,36 @@ svg:not(:root) {
     transition: transform 350ms;
   }
 }
-@media (max-width: 400px) {
+@media (min-width: 1200px) {
+  .sidebar {
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    max-height: 600px;
+    transition: transform 0.3s ease-in-out;
+  }
   .active-sidebar .sidebar {
-    height: 60%;
+    max-width: 280px;
+    width: 100%;
+    transform: translateX(0);
+    max-height: 600px;
+    margin-top: 15%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .active-sidebar .leaflet-left {
+    transform: translate(0px, 0px);
+    transition: transform 350ms;
+  }
+}
+@media (max-width: 600px) {
+  .active-sidebar .sidebar {
+    height: 400px;
     margin-top: 35%;
     transition: transform 0.3s ease-in-out;
   }
 }
+
 
 .close-button {
   cursor: pointer;
@@ -413,10 +436,10 @@ svg:not(:root) {
   }
 
 }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .contenedor-mapa .overlay .popup-popup{
-    height:85%;
-    width: 90%;
+    height:65%;
+    width: 100%;
   }
 }
 .contenedor-mapa .overlay .popup-popup .btn-cerrar-popup {
@@ -614,6 +637,7 @@ svg:not(:root) {
 }
 @media (max-width: 1200px) {
   .chart-Bar.active{
+    font-size: 13px;
     margin-top: -50vh;
     /* margin-bottom: 30em; */
     visibility: visible;
@@ -623,6 +647,7 @@ svg:not(:root) {
 }
 @media (max-width: 760px) {
   .chart-Bar.active{
+    font-size: 11px;
     margin-top: -20em;
     /* margin-bottom: 30em; */
     visibility: visible;
@@ -630,10 +655,10 @@ svg:not(:root) {
     transition: transform 0.8s ease-in-out;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .chart-Bar.active{
-    margin-top: -18em;
-    margin-bottom: 30em;
+    font-size: 9px;
+    margin-top: -35em;
     margin-left: -5em;
     width: 300vh;
     margin-right: -5em;
@@ -644,4 +669,30 @@ svg:not(:root) {
     transition: transform 0.8s ease-in-out;
   }
 }
-
+@media (max-height: 800px) {
+  .chart-Bar.active{
+    font-size: 9px;
+    margin-top: -45em;
+    margin-bottom: 40em;
+    margin-left: -5em;
+    width: 100vh;
+    height: calc(100%-75%);
+    margin-right: -5em;
+    padding: 0px;
+    visibility: visible;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
+}
+@media (min-height: 800px) {
+  .chart-Bar.active{
+    margin: auto;
+    margin-top: -60vh;
+    visibility: visible;
+    position: absolute;
+    justify-content: center;
+    vertical-align: middle;
+    transition: transform 0.8s ease-in-out;
+  }
+  
+}
