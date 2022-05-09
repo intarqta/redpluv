@@ -167,6 +167,7 @@ let config = {
       const datos2 = datos.filter(cien => {
         return cien[1] === marker.properties.Nombre;
       }) 
+
       var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > new Date(valor2) ? valor1 : valor2; });
       /* función que permite obtener los últimos valores del json*/
       Array.prototype.last = function(n){
@@ -307,6 +308,27 @@ let config = {
       myChart =  new Chart(ctx, configChart);
       canvas.classList.add('active');
    })
+   /*Descargar los datos de cada plúviometro al hacer click en el botón*/
+   const BotonDescarga = document.getElementById("botonDescarga");
+   BotonDescarga.addEventListener('click', function (){
+    var csv = datos2.map(function(d){
+    return d.join();
+    }).join('\n');
+    var link = document.createElement("a");    
+    link.id="lnkDwnldLnk";
+    document.body.appendChild(link);
+    blob = new Blob([csv], { type: 'text/csv' }); 
+    var csvUrl = window.webkitURL.createObjectURL(blob);
+    var filename = 'DatosPluv_'+datos2[1][1]+'.csv';
+    jQuery("#lnkDwnldLnk")
+    .attr({
+        'download': filename,
+        'href': csvUrl
+    });
+    jQuery('#lnkDwnldLnk')[0].click();
+    document.body.removeChild(link);
+   })
+
   }
 }
 

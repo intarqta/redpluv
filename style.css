@@ -816,36 +816,37 @@ svg:not(:root) {
   .chart-Bar.active{
     font-size: 13px;
     margin-top: -65vh;
-    /* margin-bottom: 30em; */
-    visibility: visible;
+    margin-bottom: 30em;
+    /* visibility: visible;*/
     position: relative;
     transition: transform 0.8s ease-in-out;
   }
 }
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
   .chart-Bar.active{
     font-size: 11px;
     margin-top: -20em;
-    /* margin-bottom: 30em; */
-    visibility: visible;
-    position: relative;
-    transition: transform 0.8s ease-in-out;
-  }
-}
-/* @media (max-width: 600px) {
-  .chart-Bar.active{
-    font-size: 11px;
-    margin-top: -25em;
-    margin-left: -5em;
-    width: 250vh;
-    margin-right: -5em;
-    padding: 0px;
+    margin-bottom: 30em;
     visibility: visible;
     position: relative;
     transition: transform 0.8s ease-in-out;
   }
 } */
-@media (max-height: 800px) {
+@media (max-width: 600px) {
+  .chart-Bar.active{
+    font-size: 10px;
+    margin-top: -28em;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0%;
+    height: 75%;
+    width: 95%;
+    visibility: visible;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
+}
+/* @media (max-height: 800px) {
   .chart-Bar.active{
     font-size: 9px;
     margin-top: -25em;
@@ -853,12 +854,12 @@ svg:not(:root) {
     position: relative;
     transition: transform 0.6s ease-in-out;
   }
-}
-@media (min-height: 800px) {
+} */
+@media (min-height: 1000px) {
   .chart-Bar.active{
     padding-left: 1em;
     padding-right: 1em;
-    margin-top: -35vh;
+    margin-top: -35em;
     visibility: visible;
     position: absolute;
     justify-content: center;
@@ -877,6 +878,25 @@ svg:not(:root) {
     .chart-Bar.active{
       margin: auto;
       margin-top: -65vh;
+      font-size: 11px;
+      visibility: visible;
+      position: absolute;
+      justify-content: center;
+      vertical-align: middle;
+      transition: transform 0.8s ease-in-out;
+    }
+    
+  }
+}
+@media (min-width: 800px) {
+  @media (max-width: 1400px) {
+    .contenedor-mapa .overlay .popup-popup{
+      height:90%;
+      width: 70%;
+    }
+    .chart-Bar.active{
+      margin: auto;
+      margin-top: -78vh;
       font-size: 11px;
       visibility: visible;
       position: absolute;
