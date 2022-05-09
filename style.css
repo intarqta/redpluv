@@ -873,7 +873,7 @@ svg:not(:root) {
   
 }
 /*Configuración del popup  para moviles*/
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   @media (max-height: 1000px) {
     .contenedor-mapa .overlay .popup-popup{
       height:90%;
