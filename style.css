@@ -857,7 +857,8 @@ svg:not(:root) {
   }
 } */
 @media (min-height: 1000px) {
-  .chart-Bar.active{
+  @madia(max-width: 900px){
+      .chart-Bar.active{
     padding-left: 1em;
     padding-right: 1em;
     margin-top: -35em;
@@ -867,6 +868,8 @@ svg:not(:root) {
     vertical-align: middle;
     transition: transform 0.8s ease-in-out;
   }
+      
+    }
   
 }
 /*Configuración del popup  para moviles*/
