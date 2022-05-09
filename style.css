@@ -822,6 +822,16 @@ svg:not(:root) {
     transition: transform 0.8s ease-in-out;
   }
 }
+@media (max-width: 1600px) {
+  .chart-Bar.active{
+    font-size: 13px;
+    margin-top: -75vh;
+    margin-bottom: 30em;
+    /* visibility: visible;*/
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+  }
+}
 /* @media (max-width: 760px) {
   .chart-Bar.active{
     font-size: 11px;
