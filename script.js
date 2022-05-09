@@ -157,7 +157,7 @@ let config = {
   function addContentToSidebar(marker) {
     const { id, Lugar, coords } = marker;
     const smallInfo = Lugar !== undefined ? `<small>${Lugar}</small>` : "";
-    fetch('https://sheets.googleapis.com/v4/spreadsheets/1awrrt2lEPwK-Y16boJWzRtW1INCDPqBpax6DsUAR26A/values/Hoja 1!A:E?key=AIzaSyBqSKs7DT9oDteBtU5-tgs5t3nxfciLFz0')
+    fetch('https://sheets.googleapis.com/v4/spreadsheets/1awrrt2lEPwK-Y16boJWzRtW1INCDPqBpax6DsUAR26A/values/Hoja 1!A:D?key=AIzaSyBqSKs7DT9oDteBtU5-tgs5t3nxfciLFz0')
     .then(res => res.json())
     .then(datos => {
         tabla(datos.values)
@@ -311,13 +311,15 @@ let config = {
    /*Descargar los datos de cada plúviometro al hacer click en el botón*/
    const BotonDescarga = document.getElementById("botonDescarga");
    BotonDescarga.addEventListener('click', function (){
-    var csv = datos2.map(function(d){
+    var headDatos = Array(["Agencia","Establecimiento","Fecha","Precipitación"]).concat(datos2);
+    console.log(headDatos)
+    var csv = headDatos.map(function(d){
     return d.join();
     }).join('\n');
     var link = document.createElement("a");    
     link.id="lnkDwnldLnk";
     document.body.appendChild(link);
-    blob = new Blob([csv], { type: 'text/csv' }); 
+    blob = new Blob([csv], {type: 'text/csv', charset : 'utf-8'}); 
     var csvUrl = window.webkitURL.createObjectURL(blob);
     var filename = 'DatosPluv_'+datos2[1][1]+'.csv';
     jQuery("#lnkDwnldLnk")
