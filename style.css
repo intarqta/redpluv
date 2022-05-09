@@ -856,7 +856,7 @@ svg:not(:root) {
     transition: transform 0.6s ease-in-out;
   }
 } */
-@media (min-height: 1000px) {
+@media (min-height: 870px) {
   @madia(max-width: 800px){
       .chart-Bar.active{
     padding-left: 1em;
