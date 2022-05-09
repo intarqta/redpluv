@@ -916,7 +916,7 @@ svg:not(:root) {
     }
     .chart-Bar.active{
       margin: auto;
-      margin-top: -88vh;
+      margin-top: -82;
       font-size: 11px;
       visibility: visible;
       position: absolute;
