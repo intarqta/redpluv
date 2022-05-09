@@ -912,11 +912,11 @@ svg:not(:root) {
   @media (max-width: 3600px) {
     .contenedor-mapa .overlay .popup-popup{
       height:90%;
-      width: 65%;
+      width: 70%;
     }
     .chart-Bar.active{
       margin: auto;
-      margin-top: -82vh;
+      margin-top: -81vh;
       font-size: 11px;
       visibility: visible;
       position: absolute;
