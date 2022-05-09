@@ -319,7 +319,7 @@ let config = {
     var link = document.createElement("a");    
     link.id="lnkDwnldLnk";
     document.body.appendChild(link);
-    blob = new Blob([csv], {type: 'text/csv', charset : 'utf-8'}); 
+    blob = new Blob([csv], {type: 'text/csv;charset=utf-8'}); 
     var csvUrl = window.webkitURL.createObjectURL(blob);
     var filename = 'DatosPluv_'+datos2[1][1]+'.csv';
     jQuery("#lnkDwnldLnk")
