@@ -857,7 +857,7 @@ svg:not(:root) {
   }
 } */
 @media (min-height: 1000px) {
-  @madia(max-width: 900px){
+  @madia(max-width: 800px){
       .chart-Bar.active{
     padding-left: 1em;
     padding-right: 1em;
