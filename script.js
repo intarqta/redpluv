@@ -120,7 +120,7 @@ let config = {
       }
     });
   
-  // --------------------------------------------------
+  //--------------------------------------------------
   // close when click esc
   document.addEventListener("keydown", function (event) {
     // close sidebar when press esc
@@ -174,8 +174,8 @@ let config = {
         return this.slice(-n)
       };
       var max3 = datos2.last(5);
-      max3.forEach(data =>{
-        console.log(data)       
+      
+      max3.forEach(data =>{       
 
     // create sidebar content
     const sidebarTemplate = `
@@ -188,11 +188,11 @@ let config = {
         <h2 class="marker-id5">Último registro</h2>
         <h3 class="marker-id6">Fecha: ${ max[2]}</h3>
         <h3 class="marker-id7">Lluvia: ${ max[3]}</h3>
-        <button type="button" id="botonPopupMasDatos" class="btn btn-success btn-sm btn-block dataModal botonPopupMasDatos" data-toggle="modal" data-target="#dataModal" >Mas Datos</button>     
+        <button type="button" id="botonPopupMasDatos" class="btn btn-info btn-sm btn-block dataModal botonPopupMasDatos" data-toggle="modal" data-target="#dataModal" >Mas Datos</button>     
         </article>
     `;
-          
     
+      
     // create sidebar content
     const addconttemplate = `
       <article class="sidebar-content">
@@ -200,26 +200,22 @@ let config = {
         <div class="marker-id2">Distrito: ${marker.properties.nam}</div>
         <div class="marker-id3">Departamento: ${marker.properties.Dep_nam}</div>
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
-        <table class="tablaDatos">
+          <table class="tablaDatos">
+        
           <tbody class= "tableEncab">
             </tbody class="TablaCuerpo">
             <tbody class= "tableEncab">
             <tr class ="tableTr">
-                <th class ="tableTh"> Fecha </th>
-                <td> ${max3[0][2]} </td>
-                <td> ${max3[1][2]} </td>
-                <td> ${max3[2][2]} </td>
-                <td> ${max3[3][2]} </td>
-                <td> ${max3[4][2]} </td>
-            </tr>
-            <tr class ="tableTrpre">
-                <th class ="tableTh"> Precipitación </th>
-                <td> ${max3[0][3]} </td>
-                <td> ${max3[1][3]} </td>
-                <td> ${max3[2][3]} </td>
-                <td> ${max3[3][3]} </td>
-                <td> ${max3[4][3]} </td>
-            </tr>
+            <th class ="tableTh"> Fecha </th>
+            ${max3.map((itm)=>{
+              return `<td>${itm[2]}</td>`
+            },'').join('')}</tr>
+            <tr class ="tableTr">
+            <th class ="tableTh"> Precipitación </th>
+            ${max3.map((itm)=>{
+              return `<td>${itm[3]}</td>`
+            },'').join('')}</tr>
+            
             </tbody>
         </table> 
       </article>
@@ -286,7 +282,7 @@ let config = {
       data: {
          labels: datos2.map(data =>{return data[2]}),
          datasets: [{
-            label: 'Lluvias '+max[1],
+            label: 'Lluvias '+ max[1],
             data: datos2.map(data =>{return data[3]}),
             backgroundColor: 'rgba(0, 119, 204, 0.5)'
          }]
@@ -319,7 +315,7 @@ let config = {
     var link = document.createElement("a");    
     link.id="lnkDwnldLnk";
     document.body.appendChild(link);
-    blob = new Blob([csv], {type: 'text/csv', charset : 'utf-8'}); 
+    blob = new Blob([csv], { type: "text/csv;charset=System;" }); 
     var csvUrl = window.webkitURL.createObjectURL(blob);
     var filename = 'DatosPluv_'+datos2[1][1]+'.csv';
     jQuery("#lnkDwnldLnk")
