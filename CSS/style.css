@@ -262,17 +262,19 @@ svg:not(:root) {
   left: 10px;
   color: rgb(18, 20, 100);
 }
-.botonPopupMasDatos {
+#botonPopupMasDatos {
   background-color: #00ace9;
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  top: 12em;
+  top: 10em;
   margin-left: 10px;
   max-width: 50%;
-  color: rgb(18, 20, 100);
+  color: rgb(255, 255, 255);
 }
-
+#botonPopupMasDatos:hover{
+  background-color: #E91E63 !important;
+}
 @media (min-width: 800px) {
   .marker-id {
     font-size: 15px;
@@ -684,6 +686,7 @@ svg:not(:root) {
   margin-top: 10px;
   background-color: #1786e2;
 }
+
 /*==========================================================*/
 /*Ajustes de la tabla de resumen de los primeros 3 datos*/
 /*==========================================================*/
@@ -822,16 +825,35 @@ svg:not(:root) {
   }
 }
 
-/* @media (max-width: 760px) {
-  .chart-Bar.active{
-    font-size: 11px;
-    margin-top: -20em;
-    margin-bottom: 30em;
-    visibility: visible;
-    position: relative;
-    transition: transform 0.8s ease-in-out;
+@media (min-width: 600px) {
+  @media (max-width: 800px) {
+    .chart-Bar.active{
+      font-size: 11px;
+      margin-top: -20em;
+      margin-bottom: 30em;
+      visibility: visible;
+      position: relative;
+      transition: transform 0.8s ease-in-out;
+    }
+    #btn-descargar {
+      width: 100%;
+      margin-top: 10px;
+      background-color: rgba(149, 149, 149, 0.542);
+      position: absolute;
+      display: flex;
+      padding-left: 90%;
+    }
+    .btn-desc{
+      z-index: 99999;
+      padding: 0px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    }
   }
-} */
+  
+}
+
 @media (max-width: 600px) {
   .chart-Bar.active{
     font-size: 10px;
@@ -844,6 +866,21 @@ svg:not(:root) {
     visibility: visible;
     position: relative;
     transition: transform 0.8s ease-in-out;
+  }
+  #btn-descargar {
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(149, 149, 149, 0.542);
+    position: absolute;
+    display: flex;
+    padding-left: 90%;
+  }
+  .btn-desc{
+    z-index: 99999;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
   }
 }
 /* @media (max-height: 800px) {
@@ -870,7 +907,7 @@ svg:not(:root) {
 }
 /*Configuración del popup  para moviles*/
 @media (min-width: 600px) {
-  @media (max-height: 1000px) {
+  @media (max-height: 800px) {
     .contenedor-mapa .overlay .popup-popup{
       height:90%;
       width: 70%;
@@ -904,7 +941,21 @@ svg:not(:root) {
       vertical-align: middle;
       transition: transform 0.8s ease-in-out;
     }
-    
+    #btn-descargar {
+      width: 100%;
+      margin-top: 10px;
+      background-color: rgba(149, 149, 149, 0.542);
+      position: absolute;
+      display: flex;
+      padding-left: 93%;
+    }
+    .btn-desc{
+      z-index: 99999;
+      padding: 0px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    }
   }
 }
 @media (min-width: 1400px) {
@@ -923,6 +974,34 @@ svg:not(:root) {
       vertical-align: middle;
       transition: transform 0.8s ease-in-out;
     }
-    
-  }
+    #btn-descargar {
+      width: 100%;
+      margin-top: 15px;
+      background-color: rgba(149, 149, 149, 0.542);
+      position: absolute;
+      display: flex;
+      padding-left: 96%;
+    }
+    .btn-desc{
+      z-index: 99999;
+      padding: 0px;
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+    /* configurar botones */
+
+#botonpluv, #botonpluv1, #botonDescarga {
+  background-color: #00ace9;
+  border-color: black;
+  border-width: 1px;
+}
+#botonpluv:hover{
+  background-color: #E91E63 !important;
+}
+#botonpluv1:hover{
+  background-color: #E91E63 !important;
+} 
+#botonDescarga:hover{
+  background-color: #E91E63 !important;
 }

@@ -48,14 +48,14 @@ let config = {
   let latlngs = [];
   
   // function to add markers to map
-  fetchData("./red.json")
+  fetchData("./Json/red.json")
     .then((data) => {
       // create markers width "marker-options-id"
       data.map((marker) => {
         featureGroups.push(
           L.marker(marker.properties.coords, {
               icon: L.icon({
-              iconUrl:'cloud-showers-heavy-solid.svg',
+              iconUrl:'IMG/cloud-showers-heavy-solid.svg',
               iconSize:[40,47],
               // html: `${marker.properties.id}`,            
             }),

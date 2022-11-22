@@ -7,7 +7,7 @@
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Añadir el archivo CSS -->
-    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="CSS/style.css">  
     <!-- Añadir el CDN de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -18,9 +18,11 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <!-- librería que permite cambiar los estados de los botones -->
     <script src="https://code.jquery.com/jquery-git.js"></script>
+    <!-- librería que permite incorporar botones -->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <!-- Instalar el CDN de chart.js -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> -->
-    
+   
     <!-- Añadir libreria query -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -53,13 +55,16 @@
         </table>
     </div>
     </div>
+    <!-- <div id="btn-descargar"><button class="" role="button">
+      <button class="btn-desc">⇗</button>
+    </button></div> -->
     <div id="map"></div>
     <div class="contenedor-mapa" id="contenedor-mapa">
         <div class="overlay" id="overlay">
         <div class="popup-popup" id="popup-popup">
           <ul class="ulPopupMasDatos">
             <li class="liPopupMasDatos1">
-                <button id="botonpluv1" class="btn btn-success ">Pluviometro</button>
+                <button id="botonpluv1" class="btn btn-success">Pluviometro</button>
             </li>
             <li class="liPopupMasDatos2">
               <button id="botonpluv" class="btn btn-success">Datos</button>
@@ -75,7 +80,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     <script src="cloud-showers-heavy-solid.svg"></script>
-    <script src="script.js"></script>
-    <script src="Departamentos_NS.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/Departamentos_NS.js"></script>
   </body>
 </html>
