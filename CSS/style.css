@@ -750,10 +750,6 @@ svg:not(:root) {
   
 }
 @media (max-width: 450px) {
-  #botonDescarga {
-    padding: 0px;
-    margin-top: 2px;
-  }
   .tablaDatos {
     margin-right: 1vh;
   }
@@ -850,6 +846,31 @@ svg:not(:root) {
     height: 50px;
     margin-right: 15px;
     }
+    /* configurar botones */
+    #botonpluv {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    } 
+    #botonpluv1 {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;      
+    } 
+    #botonDescarga {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    }
+    #botonpluv:hover{
+      background-color: #E91E63 !important;
+    }
+    #botonpluv1:hover{
+     background-color: #E91E63 !important;
+    } 
+    #botonDescarga:hover{
+    background-color: #E91E63 !important;
+    }
   }
   
 }
@@ -881,6 +902,31 @@ svg:not(:root) {
     width: 50px;
     height: 50px;
     margin-right: 15px;
+  }
+  /* configurar botones */
+  #botonpluv {
+    background-color: #00ace9;
+    border-color: black;
+    border-width: 1px;
+  } 
+  #botonpluv1 {
+    background-color: #00ace9;
+    border-color: black;
+    border-width: 1px;      
+  } 
+  #botonDescarga {
+    background-color: #00ace9;
+    border-color: black;
+    border-width: 1px;
+  }
+  #botonpluv:hover{
+    background-color: #E91E63 !important;
+  }
+  #botonpluv1:hover{
+   background-color: #E91E63 !important;
+  } 
+  #botonDescarga:hover{
+  background-color: #E91E63 !important;
   }
 }
 /* @media (max-height: 800px) {
@@ -956,6 +1002,31 @@ svg:not(:root) {
     height: 50px;
     margin-right: 15px;
     }
+    /* configurar botones */
+    #botonpluv {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    } 
+    #botonpluv1 {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;      
+    } 
+    #botonDescarga {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    }
+    #botonpluv:hover{
+      background-color: #E91E63 !important;
+    }
+    #botonpluv1:hover{
+     background-color: #E91E63 !important;
+    } 
+    #botonDescarga:hover{
+    background-color: #E91E63 !important;
+    }
   }
 }
 @media (min-width: 1400px) {
@@ -989,18 +1060,29 @@ svg:not(:root) {
       height: 50px;
       margin-right: 15px;
     }
-/* configurar botones */
-#botonpluv, #botonpluv1, #botonDescarga {
-  background-color: #00ace9;
-  border-color: black;
-  border-width: 1px;
-}
-#botonpluv:hover{
-  background-color: #E91E63 !important;
-}
-#botonpluv1:hover{
-  background-color: #E91E63 !important;
-} 
-#botonDescarga:hover{
-  background-color: #E91E63 !important;
-}
+      /* configurar botones */
+    #botonpluv {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    } 
+    #botonpluv1 {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;      
+    } 
+    #botonDescarga {
+      background-color: #00ace9;
+      border-color: black;
+      border-width: 1px;
+    }
+    #botonpluv:hover{
+      background-color: #E91E63 !important;
+    }
+    #botonpluv1:hover{
+     background-color: #E91E63 !important;
+    } 
+    #botonDescarga:hover{
+    background-color: #E91E63 !important;
+    }
+    }}
