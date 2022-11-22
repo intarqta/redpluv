@@ -273,7 +273,7 @@ svg:not(:root) {
   color: rgb(255, 255, 255);
 }
 #botonPopupMasDatos:hover{
-  background-color: #E91E63 !important;
+  background-color: #344968 !important;
 }
 @media (min-width: 800px) {
   .marker-id {
@@ -646,7 +646,7 @@ svg:not(:root) {
 	color: #ffffff; /* Color del texto */
 	border-radius: 5px; /* Borde del boton */
 	letter-spacing: 2px; /* Espacio entre letras */
-	background-color: rgba(255,255,255, 0.5); /* Color de fondo */
+	background-color: #00ace9; /* Color de fondo */
 	padding: 9px 15px; /* Relleno del boton */
 	position: absolute;
 	bottom: 20px;
@@ -657,9 +657,9 @@ svg:not(:root) {
 }
 
 .contenedor-mapa .overlay .popup-popup .btn-cerrar-popup:hover {
-    color: black;
+    color: #ffffff;
     padding: 18px 30px; /* Relleno del boton */
-    background-color: #E91E63; /* Color de fondo */
+    background-color: #344968; /* Color de fondo */
 }
 .popup-popup {
   display: block;
