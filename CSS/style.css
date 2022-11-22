@@ -989,8 +989,7 @@ svg:not(:root) {
       height: 50px;
       margin-right: 15px;
     }
-    /* configurar botones */
-
+/* configurar botones */
 #botonpluv, #botonpluv1, #botonDescarga {
   background-color: #00ace9;
   border-color: black;
