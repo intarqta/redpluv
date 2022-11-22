@@ -863,13 +863,13 @@ svg:not(:root) {
       border-width: 1px;
     }
     #botonpluv:hover{
-      background-color: #E91E63 !important;
+      background-color: #344968 !important;
     }
     #botonpluv1:hover{
-     background-color: #E91E63 !important;
+     background-color: #344968 !important;
     } 
     #botonDescarga:hover{
-    background-color: #E91E63 !important;
+    background-color: #344968 !important;
     }
   }
   
@@ -920,13 +920,13 @@ svg:not(:root) {
     border-width: 1px;
   }
   #botonpluv:hover{
-    background-color: #E91E63 !important;
+    background-color: #344968 !important;
   }
   #botonpluv1:hover{
-   background-color: #E91E63 !important;
+   background-color: #344968 !important;
   } 
   #botonDescarga:hover{
-  background-color: #E91E63 !important;
+  background-color: #344968 !important;
   }
 }
 /* @media (max-height: 800px) {
@@ -1019,13 +1019,13 @@ svg:not(:root) {
       border-width: 1px;
     }
     #botonpluv:hover{
-      background-color: #E91E63 !important;
+      background-color: #344968 !important;
     }
     #botonpluv1:hover{
-     background-color: #E91E63 !important;
+     background-color: #344968 !important;
     } 
     #botonDescarga:hover{
-    background-color: #E91E63 !important;
+    background-color: #344968 !important;
     }
   }
 }
@@ -1077,12 +1077,12 @@ svg:not(:root) {
       border-width: 1px;
     }
     #botonpluv:hover{
-      background-color: #E91E63 !important;
+      background-color: #344968 !important;
     }
     #botonpluv1:hover{
-     background-color: #E91E63 !important;
+     background-color: #344968 !important;
     } 
     #botonDescarga:hover{
-    background-color: #E91E63 !important;
+    background-color: #344968 !important;
     }
     }}
