@@ -44,7 +44,7 @@ svg:not(:root) {
   display: flex;
   position: absolute;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   z-index: 99999;
   background: rgb(255, 255, 255);
   overflow: hidden;
@@ -73,7 +73,7 @@ svg:not(:root) {
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 250px;
+    max-width: 290px;
     width: 100%;
     transform: translateX(0);
     max-height: 600px;
@@ -92,14 +92,14 @@ svg:not(:root) {
     top: 10px;
     left: 10px;
     border-radius: 5px;
-    max-height: 600px;
+    max-height: 60vh;
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 280px;
+    max-width: 290px;
     width: 100%;
     transform: translateX(0);
-    max-height: 600px;
+    max-height: 60vh;
     margin-top: 15%;
     transition: transform 0.3s ease-in-out;
   }
@@ -118,10 +118,10 @@ svg:not(:root) {
     transition: transform 0.3s ease-in-out;
   }
   .active-sidebar .sidebar {
-    max-width: 350px;
+    max-width: 380px;
     width: 100%;
     transform: translateX(0);
-    max-height: 520px;
+    max-height: 60vh;
     margin-top: 5%;
     transition: transform 0.3s ease-in-out;
   }
