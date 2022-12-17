@@ -262,6 +262,22 @@ svg:not(:root) {
   left: 10px;
   color: rgb(18, 20, 100);
 }
+.marker-id8 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  top: 5em;
+  left: 10px;
+  color: rgb(8, 8, 8);
+}
+.marker-id9 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  top: 6em;
+  left: 10px;
+  color: rgb(8, 8, 8);
+}
 #botonPopupMasDatos {
   background-color: #00ace9;
   font-size: 16px;
@@ -331,6 +347,22 @@ svg:not(:root) {
     top: 9em;
     left: 10px;
     color: rgb(18, 20, 100);
+  }
+  .marker-id8 {
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 5em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id9 {
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 6em;
+    left: 10px;
+    color: rgb(8, 8, 8);
   }
   .botonPopupMasDatos {
     background-color: #00ace9;
@@ -423,6 +455,22 @@ svg:not(:root) {
       left: 10px;
       color: rgb(18, 20, 100);
     }
+    .marker-id8 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 5em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
+    .marker-id9 {
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      top: 6em;
+      left: 10px;
+      color: rgb(8, 8, 8);
+    }
     .botonPopupMasDatos {
       background-color: #00ace9;
       font-size: 18px;
@@ -514,6 +562,22 @@ svg:not(:root) {
     top: 7em;
     left: 10px;
     color: rgb(18, 20, 100);
+  }
+  .marker-id8 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 4em;
+    left: 10px;
+    color: rgb(8, 8, 8);
+  }
+  .marker-id9 {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 5em;
+    left: 10px;
+    color: rgb(8, 8, 8);
   }
   .botonPopupMasDatos {
     
@@ -691,7 +755,7 @@ svg:not(:root) {
 /*Ajustes de la tabla de resumen de los primeros 3 datos*/
 /*==========================================================*/
 .tablaDatos {
-  margin-top: 5em;
+  margin-top: 10em;
   margin-left: 10px;
   width: auto;
 }
