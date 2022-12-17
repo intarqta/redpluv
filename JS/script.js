@@ -168,13 +168,32 @@ let config = {
         return cien[1] === marker.properties.Nombre;
       }) 
 
-      var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > new Date(valor2) ? valor1 : valor2; });
+var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > new Date(valor2) ? valor1 : valor2; });
       /* función que permite obtener los últimos valores del json*/
       Array.prototype.last = function(n){
         return this.slice(-n)
       };
       var max3 = datos2.last(5);
+      //Acumulado del último año
+      var añoActual = new Date().getFullYear().toString();
+      var datosUltimos = datos2.filter(datosLluvia =>{
+        return datosLluvia[2].substring(6,10) === añoActual;
+      });
       
+      let totalAño=0
+      let numeros = datosUltimos.map(data =>{return Number(data[3])});
+      numeros.forEach(function(a){totalAño += a;});
+      // Acumulado mensual
+      let totalMes = 0
+      var mesActual = new Date().getMonth() + 1;
+      let mesActualString = mesActual.toString();
+      let ultimoMes = datosUltimos.filter(datosLluvia =>{
+        return datosLluvia[2].substring(3,5) === mesActualString;
+      });
+
+      let numerosMes = ultimoMes.map(data =>{return Number(data[3])});
+      numerosMes.forEach(function(a){totalMes += a;});
+
       max3.forEach(data =>{       
 
     // create sidebar content
@@ -200,8 +219,9 @@ let config = {
         <div class="marker-id2">Distrito: ${marker.properties.nam}</div>
         <div class="marker-id3">Departamento: ${marker.properties.Dep_nam}</div>
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
-          <table class="tablaDatos">
-        
+        <div class="marker-id8">Acumulado mensual: ${totalMes}</div>
+        <div class="marker-id9">Acumulado anual: ${totalAño}</div>
+          <table class="tablaDatos">        
           <tbody class= "tableEncab">
             </tbody class="TablaCuerpo">
             <tbody class= "tableEncab">
@@ -220,7 +240,6 @@ let config = {
         </table> 
       </article>
     `;
-
     const sidebar = document.querySelector(".sidebar");
     const sidebarContent = document.querySelector(".sidebar-content");
 
