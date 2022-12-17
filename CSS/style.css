@@ -131,7 +131,14 @@ svg:not(:root) {
     transition: transform 350ms;
   }
 }
-
+@media (max-height: 900px) {
+  @media (min-width: 1000px) {
+    .active-sidebar .sidebar {
+      max-height: 75vh;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
 .close-button {
   cursor: pointer;
   position: absolute;
