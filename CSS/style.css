@@ -507,6 +507,7 @@ svg:not(:root) {
   
 }
 @media (min-width: 1200px) {
+  
   .marker-id {
     font-size: 20px;
     font-weight: bold;
@@ -755,7 +756,7 @@ svg:not(:root) {
 /*Ajustes de la tabla de resumen de los primeros 3 datos*/
 /*==========================================================*/
 .tablaDatos {
-  margin-top: 10em;
+  margin-top: 7em;
   margin-left: 10px;
   width: auto;
 }
@@ -786,6 +787,9 @@ svg:not(:root) {
 
 @media (min-width: 768px) {
   @media (max-width: 1200px) {
+    .tablaDatos {
+      margin-top: 8em;
+    }
     .tableTr {
       font-size: 11px;
       border: 1px solid black;
@@ -1037,6 +1041,9 @@ svg:not(:root) {
 }
 @media (min-width: 800px) {
   @media (max-width: 1400px) {
+    .tablaDatos {
+      margin-top: 8em;
+    }
     .contenedor-mapa .overlay .popup-popup{
       height:90%;
       width: 70%;
@@ -1095,6 +1102,9 @@ svg:not(:root) {
 }
 @media (min-width: 1400px) {
   @media (max-width: 3600px) {
+    .tablaDatos {
+      margin-top: 9em;
+    }
     .contenedor-mapa .overlay .popup-popup{
       height:90%;
       width: 70%;
