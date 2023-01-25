@@ -231,7 +231,7 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
               return `<td>${itm[2]}</td>`
             },'').join('')}</tr>
             <tr class ="tableTr">
-            <th class ="tableTh"> Precipitación </th>
+            <th class ="tableTh"> Precipitación (mm) </th>
             ${max3.map((itm)=>{
               return `<td>${itm[3]}</td>`
             },'').join('')}</tr>
