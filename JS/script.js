@@ -188,7 +188,7 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
       var mesActual = new Date().getMonth() + 1;
       let mesActualString = mesActual.toString();
       let ultimoMes = datosUltimos.filter(datosLluvia =>{
-        return datosLluvia[2].substring(3,5) === mesActualString;
+        return Number(datosLluvia[2].substring(3,5)).toString() === mesActualString;
       });
 
       let numerosMes = ultimoMes.map(data =>{return Number(data[3])});
@@ -206,7 +206,7 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
         <h2 class="marker-id5">Último registro</h2>
         <h3 class="marker-id6">Fecha: ${ max[2]}</h3>
-        <h3 class="marker-id7">Lluvia: ${ max[3]}</h3>
+        <h3 class="marker-id7">Lluvia: ${ max[3] + " mm"}</h3>
         <button type="button" id="botonPopupMasDatos" class="btn btn-info btn-sm btn-block dataModal botonPopupMasDatos" data-toggle="modal" data-target="#dataModal" >Mas Datos</button>     
         </article>
     `;
@@ -219,8 +219,8 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
         <div class="marker-id2">Distrito: ${marker.properties.nam}</div>
         <div class="marker-id3">Departamento: ${marker.properties.Dep_nam}</div>
         <div class="marker-id4">Plúviometro: ${marker.properties.Tip_Plu}</div>
-        <div class="marker-id8">Acumulado mensual: ${totalMes}</div>
-        <div class="marker-id9">Acumulado anual: ${totalAño}</div>
+        <div class="marker-id8">Acumulado mensual: ${totalMes + " mm"}</div>
+        <div class="marker-id9">Acumulado anual: ${totalAño + " mm"}</div>
           <table class="tablaDatos">        
           <tbody class= "tableEncab">
             </tbody class="TablaCuerpo">
