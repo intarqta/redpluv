@@ -5,7 +5,7 @@
 
 // config map
 let config = {
-    minZoom: 8,
+    minZoom: 7,
     maxZoom: 18,
   };
  
@@ -13,8 +13,8 @@ let config = {
   const zoom = 18;
   // co-ordinates
   
-  const lat = -60.45;
-  const lng = -28.83;
+  const lat = -61.03;
+  const lng = -31.3;
   
   // calling map
   const map = L.map("map", config).setView([lat, lng], zoom);
@@ -75,13 +75,12 @@ let config = {
       /*añadir los departamentos al mapa*/
       L.geoJson(Departamentos,{
         fillOpacity:0,
-        color:'indigo',
-        weight: 2,
+        color:'#00ace9',
+        weight: 3,
       }).addTo(map);  
       return data;
     })
     .then((data) => {
-      
       // create feature group
       // add markers to map
       featureGroups.map((marker) => {
@@ -106,7 +105,8 @@ let config = {
       groupBounds.on("click", function (e) {
         if (e.layer instanceof L.Marker) {
           showSidebarWidthText(e.layer.options["marker-options-id"]);
-        }
+          map.setView([e.layer._latlng.lat,e.layer._latlng.lng],14);
+        }        
       });
   
       // add comment to sodebar depending on marker id
@@ -134,7 +134,7 @@ let config = {
     
     // close sidebar when click on close button
     closeSidebar();
-    map.setView([-29.25 ,-60.45], 8);
+    map.setView([-31.3 ,-61.03], 7);
   });
   
   
@@ -349,13 +349,14 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
   }
 }
 
-   
+
   // --------------------------------------------------
   // bounds map when sidebar is open
   function boundsMap(coords) {
     const sidebar = document.querySelector(".sidebar").offsetWidth;
   
     const marker = L.marker(coords);
+    console.log(marker.latlngs)
     const group = L.featureGroup([marker]);
   
     // bounds depending on whether we have a marker or not
@@ -363,8 +364,328 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
   
     // set bounds of map depending on sidebar
     // width and feature group bounds
-    map.fitBounds(bounds, {
-      paddingTopLeft: [coords ? sidebar :   400, 0],
-    });
+    // map.fitBounds(bounds, {
+    //   paddingTopLeft: [coords ? sidebar :   400, 0],
+      
+    // });
     
+
   }
+
+// Botón interactivo para más datos
+const botonFiltroDatosAbrir = document.getElementById("botonFiltroDatosAbrir");
+const botonFiltroDatosCerrar = document.getElementById("botonFiltroDatosCerrar");
+const filtroDatos = document.getElementById("filtroDatos");
+botonFiltroDatosAbrir.addEventListener('click', function(){
+  botonFiltroDatosAbrir.classList.add('active')
+  botonFiltroDatosCerrar.classList.add('active')
+  filtroDatos.classList.add('active')
+
+})
+botonFiltroDatosCerrar.addEventListener('click', function(){
+  botonFiltroDatosAbrir.classList.remove('active')
+  botonFiltroDatosCerrar.classList.remove('active')
+  filtroDatos.classList.remove('active')
+
+})
+
+// Botones de filtrado de datos
+function populate(slct1, slct2) {
+  var s1 = document.getElementById(slct1);
+  var s2 = document.getElementById(slct2);
+  s2.innerHTML = "";
+  optionArray = [];
+  // Extraer los datos de la base de datos
+  fetch('https://sheets.googleapis.com/v4/spreadsheets/1awrrt2lEPwK-Y16boJWzRtW1INCDPqBpax6DsUAR26A/values/Hoja 1!A:D?key=AIzaSyBqSKs7DT9oDteBtU5-tgs5t3nxfciLFz0')
+    .then(res => res.json())
+    .then(datos => {
+        tabla(datos.values)
+    })
+    function tabla(datos) {
+    //  console.log(datos.map(data =>{return data[1]}))
+
+    if (s1.value == "9 de Julio") {
+      var optionArray = {"Comuna de Gato Colorado":["Comuna_de_Gato_Colorado"],
+      "Comisaría Santa Margarita":["Comisaria_de_Sta_Margarita"],
+      "Zona Rural de Gregoria Pérez de Denis (Pablo Miranda)":["Zona_rural_Gregorio_P_Denis"],
+      "Est. El Patito":["Zona_rural_San_Bernardo"],
+      "Comisaría Esteban Rams":["Comisaria_de_Esteban_Rams"],
+      "Comisaría Logroño":["Comisaria_de_Logrono"],
+      "Comisaría de Montefiore":["Comisaria_de_Montefiore"],
+      "Min. Produc. V. Minetti":["Min_Prod_V_Minetti"],
+      "Comisaría de Pozo Borrado":["Comisaria_de_P_Borrado"],
+      "Est. Gerardo Mondino":["Establecimiento_Mondino"],
+      "Est. La Güeya (Sr. Lahitte)":["La_Guella"],
+      "Cuatro Bocas (Alfredo Andreu)":["Cuatro_Bocas"]
+      };
+  } else if (s1.value == "Vera") {
+      var optionArray = {"Miguel Cancian":["Cancian"],
+      "Mario Vicentin":["Vicentin"],
+      "Cooperativa de Margarita":["Cooperativa_de_Margarita"],
+      "Forestagro":["Forestagro"],
+      "La invernada":["La_Invernada"],
+      "Las Gamas":["Las_Gamas"],
+      "El Guanagán":["La_Sombrilla"],
+      "Est. La Virginia":["La_Virginia"],
+      "Los Teritos":["Batistuta"],
+      "Vicentin":["Sopere"],
+      "Bressan":["Bressan"],
+      "Chamorro":["Chamorro"]
+    };
+    console.log(optionArray)
+  } else if (s1.value == "General Obligado") {
+      var optionArray = {"Tacuarendí":["COET_Tacuarendi"],
+      "Florencia":["Establecimiento_Forencia"],
+      "El Rabón":["El_Rabon"],
+      "Pje San Juan (Villa Guillermina)":["Pje_San_Juan"],
+      "Zona rural de Villa Guillermina":["V_Guillermina"],
+      "Las Toscas":["Las_Toscas"],
+      "Las Toscas":["Las_Toscas"],
+      "Zona rural Villa Adela":["Villa_Adela"],
+      "Zona rural Villa Ana":["V_Ana"],
+      "Zona rural Las Claritas":["Las_Claritas"],
+      "Zona rural El Sombrerito":["El_Sombrerito"],
+      "Avellaneda":["Avellaneda"],
+      "Reconquista":["Coop_UAA_Reconquista"],
+      "El Arazá":["Coop_UAA_El_Araza"],
+      "La Sarita":["Coop_UAA_La_Sarita"],
+      "El Timbó":["Coop_UAA_El_Timbo"],
+      "Guadalupe Norte":["Coop_UAA_Guadalupe_Norte"],
+      "Lanteri":["Coop_UAA_Lanteri"],
+      "Complejo Los Lapachos":["Coop_UAA_Los_Lapachos"],
+      "Aº Ceibal":["Coop_UAA_Ceibal"],
+      "Malabrigo":["Malabrigo"],
+      "San Manuel":["San_Manuel"],
+      "Zona rural Paraje 3 Bocas":["Tres_Bocas"],
+      "EEA Reconquista":["Las_Aminatas"]
+      };
+  } else if (s1.value == "San Javier") {
+    var optionArray = {
+    "Romang":["Coop_Malabrigo_Romang"],
+    "Colonia  La Criolla":["Colonia_La_Criolla"],
+    "Ferreira":["H_C_Alejandra"],
+    "Cacique Araicaiquín":["Cque_Araicaiquin"],
+    "La Brava":["La_Brava"],
+    "Colonia Teresa":["Colonia_Teresa"],
+    "Paraje Los Jacintos":["Los_Jacintos"],
+    "Colonia San Roque":["Colonia_San_Roque"]
+    };       
+  }else if (s1.value == "San Javier") {
+    var optionArray = {
+    "Romang":["Coop_Malabrigo_Romang"],
+    "Colonia  La Criolla":["Colonia_La_Criolla"],
+    "Ferreira":["H_C_Alejandra"],
+    "Cacique Araicaiquín":["Cque_Araicaiquin"],
+    "La Brava":["La_Brava"],
+    "Colonia Teresa":["Colonia_Teresa"],
+    "Paraje Los Jacintos":["Los_Jacintos"],
+    "Colonia San Roque":["Colonia_San_Roque"]
+    };       
+}
+
+for (var option in Object.keys(optionArray)) {
+  if (Object.keys(optionArray).hasOwnProperty(option)) {
+      var pair = Object.keys(optionArray)[option];
+      var checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = "checkbox-pluviometros"
+      checkbox.name = "checkbox";
+      checkbox.value = pair;
+      s2.appendChild(checkbox);
+
+      var label = document.createElement('label')
+      label.id = "nombre-checkbox-pluviometros";
+      label.htmlFor = pair;
+      label.appendChild(document.createTextNode(pair));
+
+      s2.appendChild(label);
+      s2.appendChild(document.createElement("br"));         
+
+    }
+  }
+  // Generamos los arrays para cargarlos los pluviométros chequeados
+  delete listCheked;
+  delete arrayAllCheked;
+  
+  var listCheked = new Array();
+  var arrayAllCheked = new Array();
+
+
+  const aplicarFiltroPluviometros = document.getElementById("boton-aplicar-filtro");
+  // const botonGrafica = document.getElementById("boton-graficar");
+  const botonDescargar = document.getElementById("boton-descargar");
+  const botonReset = document.getElementById("boton-reset");
+  aplicarFiltroPluviometros.addEventListener('click', function(){
+    if($(s2.checkbox).is(':checked')){
+    arrayAllCheked.length = [];
+    listCheked.length = [];
+    listCheked.destroy;
+    arrayAllCheked.destroy;
+    optionArray.destroy;
+    // Modificar la clase de los botones gráfica y descarga
+    // botonGrafica.classList.add('active');
+    botonDescargar.classList.add('active')
+    botonReset.classList.add('active')
+    // Borrar los elementos de los arrays
+    let valores = new Array();
+    var checkboxes = s2.checkbox;
+    valores.length = [];
+    checkboxes.length = [];
+    var arr = Object.keys(optionArray).map(function (key) {return [key, optionArray[key]];});
+
+    for (var i=0; i < checkboxes.length; i++){
+        if (checkboxes[i].checked){
+            valores.push(checkboxes[i].value);
+        }
+    }
+    // Compara ambos arrays para solo quedarse con un array cheked
+      arr.forEach(data =>{
+        valores.forEach(dat =>{
+          if(data[0]==dat){
+            //  Extrae de la base de datos, todos los eventos de precipitaciones para el / los 
+            // pluviométros seleccionados
+            arrayAllCheked.push(datos.filter(dat =>{
+              return dat[1]==data[1][0];
+             }))
+
+          }
+        })
+     })
+    //  Añade el lugar a cada evento de precipitación 
+     for (var i=0; i < valores.length; i++){
+     arrayAllCheked[i].map(k =>{
+        k.push(valores[i])
+      })
+    }
+      // // Generar Gráfico de lineas para cada pluviométro
+      // const showObjet = document.getElementById("show");
+      // const selectPluv = document.getElementById("pluviometro");
+      // const showObjet1 = document.getElementById("show1");
+      // const showObjet2 = document.getElementById("show2");
+      // const graficoConfig = document.getElementById("grafica-config");
+      // const graph = document.querySelector("#grafica");
+      // const ctxchart = graph.getContext('2d');
+
+      // botonGrafica.addEventListener('click', function(){
+      //   if($(checkboxes).is(':checked')){
+      //     s1.classList.add('active');
+      //    s2.classList.add('active');
+      //    showObjet.classList.add('active');
+      //    showObjet1.classList.add('active');
+      //    showObjet2.classList.add('active');
+      //    graficoConfig.classList.add('active')
+      //   //  generar una lista desplegable
+      //   // con los pluviometros selecionados
+
+      //   //  Generar una gráfica de columnas
+
+      //   /*Carga de gráficas y link de descarga dentro del popup Datos*/
+
+      // //    new Chart(ctxchart, config);
+            
+      
+      //   for (var i=0; i < valores.length; i++){ 
+      //     var selectPluviometro = document.createElement("option");
+      //     selectPluviometro.innerHTML = valores[i];
+      //     selectPluv.appendChild(selectPluviometro);
+      //     selectPluv.appendChild(document.createElement("br"));
+         
+      //    }  
+      //   // const canvasPrincipal = document.getElementById('grafico-pluviometros-cheked');
+      //   // const ctxPrincipal = canvasPrincipal.getContext('2d');
+      //   const configChartPrincipal = {
+      //     type: 'bar',
+      //     data: {
+      //        labels: arrayAllCheked[i].map(data =>{return data[2]}),
+      //        datasets: [{
+      //           label: valores[i],
+      //           data: arrayAllCheked[i].map(data =>{return data[3]}),
+      //           borderColor:"rgba(236, 35, 35, 0.75)",
+      //           backgroundColor: 'rgba(236, 35, 35,0.75)'
+      //        } 
+      //       ]
+      //     } 
+      //    }
+      //   //  añadir el gráfico y asignarle la clase active 
+      //    myChart =  new Chart(ctxchart, configChartPrincipal);
+       
+      //    /*Función que permite destruir el evento gráfico al cambiar de pestaña o cerrar el pupup */
+      //   //  if(myChart){
+      //   // myChart.destroy();
+      //   // }
+      //   }else{
+      //     alert('Seleccione un pluviométro para gráficar!');
+      //   }
+        
+      // })
+      /*Descargar los datos de cada plúviometro al hacer click en el botón*/
+     botonDescargar.addEventListener('click', function (){
+      // Generar un solo arrays con todos los datos seleccionados
+      var arrayVacioEj = new Array([]);
+     arrayAllCheked.forEach(arrayData =>{
+        return arrayVacioEj = arrayVacioEj.concat(arrayData)
+     })
+      // comprobar si algún pluviometro está
+      if($(checkboxes).is(':checked')){
+      var headDatos = Array(["Agencia","ID","Fecha","Precipitación", "Lugar"]).concat(arrayVacioEj);
+      console.log(headDatos)
+      // console.log(arrayVacioEj)
+      var csv = headDatos.map(function(d){
+      return d.join();
+      }).join('\n');
+      var link = document.createElement("a");    
+      link.id="lnkDwnldLnk";
+      document.body.appendChild(link);
+      blob = new Blob([csv], { type: "text/csv;charset=System;" }); 
+      var csvUrl = window.webkitURL.createObjectURL(blob);
+      var filename = 'DatosPluviometricos'+'.csv';
+      jQuery("#lnkDwnldLnk")
+      .attr({
+        'download': filename,
+        'href': csvUrl
+      });
+      jQuery('#lnkDwnldLnk')[0].click();
+      document.body.removeChild(link);
+      
+      } else{
+        alert('Seleccione un pluviométro para descargar!');
+      }
+
+     })
+
+     console.log(arrayAllCheked)
+     console.log(listCheked)
+     botonReset.addEventListener('click', function() {
+      for (let i=0; i<checkboxes.length; i++) {
+        // Vaciar los casilleros chequeados
+          delete listCheked;
+          delete arrayAllCheked;
+          delete optionArray;
+          delete s2;
+          // for (let i = selectPluv.options.length; i >= 0; i--) {
+          //   selectPluv.remove(i);
+          // }
+          valores.length = [];
+          if(checkboxes[i].type == "checkbox") {
+            checkboxes[i].checked = false
+          }
+      }
+      s1.classList.remove('active');
+      s2.classList.remove('active');
+      botonDescargar.classList.remove('active')
+      botonReset.classList.remove('active')
+      // showObjet1.classList.remove('active');
+      // showObjet2.classList.remove('active');
+      // graficoConfig.classList.remove('active')
+      /*Función que permite destruir el evento gráfico al cambiar de pestaña o cerrar el pupup */
+    //   if(myChart){
+    //     myChart.destroy();
+    //   }
+    })
+  }else{
+    alert('Seleccione un pluviométro para iniciar!');
+  }
+  })
+  
+ }
+};
