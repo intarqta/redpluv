@@ -166,25 +166,7 @@ svg:not(:root) {
 #slct1.active, #slct2.active, #show.active,#show1.active,#show2.active  {
   visibility: hidden;
 }
-#grafica-config {
-  visibility: hidden;
-  position: absolute;
-  margin-top: 0vh;
-  vertical-align: top;
-  width: 600px;
-  height: 300px;
-  /* background-color: #00ace9; */
-}
-/* Configuración del gráfico principal */
-#grafica-config.active {
-  visibility: visible;
-  position: absolute;
-  margin-top: 0vh;
-  vertical-align: top;
-  width: 600px;
-  height: 300px;
-  /* background-color: #00ace9; */
-}
+
 /*========================================= Fin Panel de filtro de datos ======================*/
 .active-sidebar .leaflet-left {
   transform: translateX(280px);
