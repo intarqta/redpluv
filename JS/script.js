@@ -13,8 +13,8 @@ let config = {
   const zoom = 18;
   // co-ordinates
   
-  const lat = -61.03;
-  const lng = -31.3;
+  const lat = -60.45;
+  const lng = -28.83;
   
   // calling map
   const map = L.map("map", config).setView([lat, lng], zoom);
@@ -134,7 +134,7 @@ let config = {
     
     // close sidebar when click on close button
     closeSidebar();
-    map.setView([-31.3 ,-61.03], 7);
+    map.setView([-29.25 ,-60.45], 8);
   });
   
   
@@ -364,11 +364,9 @@ var max = datos2.reduce(function (valor1, valor2) { return new Date(valor1) > ne
   
     // set bounds of map depending on sidebar
     // width and feature group bounds
-    // map.fitBounds(bounds, {
-    //   paddingTopLeft: [coords ? sidebar :   400, 0],
-      
-    // });
-    
+    map.fitBounds(bounds, {
+      paddingTopLeft: [coords ? sidebar :   400, 0],
+    });    
 
   }
 
