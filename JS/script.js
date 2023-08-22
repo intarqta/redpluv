@@ -105,7 +105,7 @@ let config = {
       groupBounds.on("click", function (e) {
         if (e.layer instanceof L.Marker) {
           showSidebarWidthText(e.layer.options["marker-options-id"]);
-          map.setView([e.layer._latlng.lat,e.layer._latlng.lng],14);
+          //map.setView([e.layer._latlng.lat,e.layer._latlng.lng],14);
         }        
       });
   
