@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RedPluv</title>
+    <title>Red Pluv</title>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Añadir el archivo CSS -->
-    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="CSS/style.css">  
     <!-- Añadir el CDN de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -18,9 +18,11 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <!-- librería que permite cambiar los estados de los botones -->
     <script src="https://code.jquery.com/jquery-git.js"></script>
+    <!-- librería que permite incorporar botones -->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <!-- Instalar el CDN de chart.js -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> -->
-    
+   
     <!-- Añadir libreria query -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -53,13 +55,54 @@
         </table>
     </div>
     </div>
+    <!-- Generar popup expandible a la derecha -->
+    <button id="botonFiltroDatosAbrir" class="toggleLegendBtn ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-button-icon-only" title="Búsqueda avanzada de los datos" role="button" style="position: absolute; right: 0px; top: 0px;"><span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-ne"></span><span class="ui-button-text">⇗</span></button>
+    <div id="divContentFiltroDatos">
+      <div id="filtroDatos">
+        <button id="botonFiltroDatosCerrar" class="toggleLegendBtn ui-button ui-widget ui-state-default ui-corner-all ui-state-hover ui-button-icon-only" title="Búsqueda avanzada de los datos" role="button" style="position: absolute; right: 0px; top: 0px;"><span class="ui-button-icon-primary ui-icon ui-icon-arrowthick-1-ne"></span><span class="ui-button-text">⇙</span></button>
+        <h4 id="titulo-footer">Consulta de datos por departamento o distrito</h4>
+        <div id="grafica-config">
+          <div id="seleccionar-pluviometro">Seleccione departamento:
+            <select name="pluviometro" id="pluviometro"></select>
+          </div>
+          <canvas id="grafica"></canvas>
+        </div>
+          <hr />
+          <h6 id="show">Seleccione departamento:</h6>
+          <select id="slct1" name="slct1" data-default-value=" " onchange="populate(this.id, 'slct2')">
+          <option value=""></option>
+          <option value="9 de Julio">9 de Julio</option>
+          <option value="Vera">Vera</option>
+          <option value="General Obligado">General Obligado</option>
+          <option value="San Javier">San Javier</option>
+          </select>
+          <hr id="show1" />
+          <h6 id="show2">Nombre de pluviométros:</h6>
+          <form id="slct2"></form>
+          
+          <hr />
+        <div id="contentBotonFiltroDatos">
+          <button id="boton-aplicar-filtro" class="btn btn-success">Aplicar</button>
+          <!-- <button id="boton-graficar" class="btn btn-success">Gráfica</button> -->
+          <button id="boton-descargar" class="btn btn-success">Descargar</button>
+          <button id="boton-reset" class="btn btn-success">Reset</button>
+        </div>        
+        <div class="footer">
+          <img id="logo-footer" src="https://siga.inta.gob.ar/images/inta4.png" width="40px" alt="inta.gob.ar">
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div id="btn-descargar"><button class="" role="button">
+      <button class="btn-desc">⇗</button>
+    </button></div> -->
     <div id="map"></div>
     <div class="contenedor-mapa" id="contenedor-mapa">
         <div class="overlay" id="overlay">
         <div class="popup-popup" id="popup-popup">
           <ul class="ulPopupMasDatos">
             <li class="liPopupMasDatos1">
-                <button id="botonpluv1" class="btn btn-success ">Pluviometro</button>
+                <button id="botonpluv1" class="btn btn-success">Pluviometro</button>
             </li>
             <li class="liPopupMasDatos2">
               <button id="botonpluv" class="btn btn-success">Datos</button>
@@ -74,8 +117,8 @@
       </div> 
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="cloud-showers-heavy-solid.svg"></script>
-    <script src="script.js"></script>
-    <script src="Departamentos_NS.js"></script>
+    <script src="./IMG/cloud-showers-heavy-solid.svg"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/Dep.js"></script>
   </body>
 </html>
