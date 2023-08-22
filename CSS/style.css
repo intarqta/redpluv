@@ -35,7 +35,157 @@ svg:not(:root) {
 .hidden {
   display: none;
 }
+/*========================================= Panel de filtro de datos ======================*/
+/* Configuración del boton de filtros de datos */
+#botonFiltroDatosAbrir {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 999999;
+  margin-right: 3vh;
+  margin-top: 3vh;
+  border-radius: 5px;
+  border-color: #00ace9;
+  border-width: 3px;
+  color: #000000;
+  background-color: #00ace9;
+  /* transition: 1s ease all; */
+}
+#botonFiltroDatosCerrar {
+  visibility: hidden;
+}
+#botonFiltroDatosCerrar.active {
+  visibility: visible;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  margin-right: 1.5vh;
+  margin-top: 1.5vh;
+  border-radius: 5px;
+  border-color: #00ace9;
+  border-width: 3px;
+  color: #000000;
+  background-color: #00ace9;
+  /* transition: 1s ease all; */
+}
+#botonFiltroDatosAbrir.active {
+  visibility: hidden;
+}
+/* Configuración del panel de filtro de datos */
+#divContentFiltroDatos {
+  display: flex;
+  justify-content: right;
 
+}
+#filtroDatos {
+  /* transition: 3s ease all; */
+  visibility: hidden;
+  position: absolute;
+}
+#filtroDatos.active {
+  visibility: visible;
+  border-radius: 5px;
+  position: absolute;
+  width: 90%;
+  max-height: 95%;
+  z-index: 999;
+  background-color: #ffffff;
+  margin-right: 1.5vh;
+  margin-top: 1.5vh;
+  padding: 1.5vh;
+  transition: 1s ease-in-out all;
+  margin-left: 10vh;
+}
+.footer {
+  position: absolute;
+  border-top: 0.5px solid #e3e3e3c0;
+  background-image: url(../IMG/imagen-footer-red.jpg);
+  /* background: linear-gradient(rgb(255, 255, 255),rgb(173, 220, 249), rgb(130, 197, 223), rgb(121, 192, 250)); */
+  background-size: cover;
+  background-color: #70d1ef;
+  height: 50px;
+  width: 100%;
+  /* padding: auto; */
+  margin-left: -1.5vh;
+  margin-right: -1.5vh;
+  bottom: 0;
+  padding: 1vh;
+  border-radius: 5px;
+  }
+#logo-footer {
+  margin-top: -0.3vh;
+}
+#titulo-footer {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-bottom: 2vh;
+  padding-right: 3vh;
+}
+#filtro-departamento {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-bottom: 1vh;
+}
+#boton-aplicar-filtro {
+  margin-top: -2vh;
+  margin-bottom: 5vh;
+}
+#boton-graficar, #boton-descargar, #grafico-pluviometros-cheked, #boton-reset {
+  visibility: hidden;
+  margin-top: -2vh;
+  margin-bottom: 5vh;
+}
+#boton-graficar.active, #boton-descargar.active, #boton-reset.active {
+  visibility: visible;
+  margin-top: -2vh;
+  margin-bottom: 5vh;
+}
+#checkbox-pluviometros {
+  width: 15px;
+  height: 15px;
+  margin-right: 1vh;
+  color: green;
+}
+#nombre-checkbox-pluviometros {
+  vertical-align: middle;
+  font-weight: 500;
+}
+#probar {
+  background-color: red;
+}
+#slct2 {
+  max-height: 45vh;
+  overflow: auto;
+  margin-top: 1vh;
+}
+#contentBotonFiltroDatos {
+  display: block;
+
+}
+#slct1.active, #slct2.active, #show.active,#show1.active,#show2.active  {
+  visibility: hidden;
+}
+#grafica-config {
+  visibility: hidden;
+  position: absolute;
+  margin-top: 0vh;
+  vertical-align: top;
+  width: 600px;
+  height: 300px;
+  /* background-color: #00ace9; */
+}
+/* Configuración del gráfico principal */
+#grafica-config.active {
+  visibility: visible;
+  position: absolute;
+  margin-top: 0vh;
+  vertical-align: top;
+  width: 600px;
+  height: 300px;
+  /* background-color: #00ace9; */
+}
+/*========================================= Fin Panel de filtro de datos ======================*/
 .active-sidebar .leaflet-left {
   transform: translateX(280px);
 }
@@ -293,6 +443,12 @@ svg:not(:root) {
   top: 10em;
   margin-left: 10px;
   max-width: 50%;
+  color: rgb(255, 255, 255);
+}
+#boton-aplicar-filtro, #boton-graficar, #boton-descargar, #boton-reset {
+  background-color: #00ace9;
+  font-size: 16px;
+  font-weight: bold;
   color: rgb(255, 255, 255);
 }
 #botonPopupMasDatos:hover{
@@ -1167,3 +1323,4 @@ svg:not(:root) {
     background-color: #344968 !important;
     }
     }}
+
