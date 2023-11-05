@@ -66,7 +66,7 @@ let config = {
         latlngs.push(marker.properties.coords);
         
       });
-      
+      console.log(featureGroups)
       // add polyline to map
       L.geoJson(latlngs, {
         color: "#ff3939",
